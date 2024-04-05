@@ -1,0 +1,59 @@
+@import './libs/variables.scss';
+@import './libs/normalize.scss';
+
+body {
+  background-color: $background;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: calc(100vw - 100px);
+  height: 80vh;
+  background-color: #fff;
+  margin: 50px auto;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px;
+}
+
+.notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+
+.btnLoader {
+  position: relative;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: rotateBtn 1s linear infinite;
+  display: block;
+}
+
+.btnLoader::before {
+  content: "";
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: prixClipFix 2s linear infinite;
+  inset: 0;
+}
+
+@keyframes rotateBtn {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes prixClipFix {
+  0% { clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0); }
+  25% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0); }
+  50% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%); }
+  75% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%); }
+  100% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0); }
+}

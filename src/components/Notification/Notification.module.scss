@@ -1,0 +1,127 @@
+@import '../../scss/libs/variables';
+
+.notification {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  min-width: 400px;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgb(0 0 0 / 15%);
+  background: $white;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 12px;
+  animation: show 0.5s ease 1 forwards ;
+}
+
+.hide {
+  animation: hide 0.3s ease 1 forwards ;
+}
+
+.iconContainer {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  height: 40px;
+  width: 40px;
+  background-color: $success;
+}
+
+.info {
+  width: 100%;
+}
+
+.error {
+  background-color: $error;
+}
+
+.icon {
+  color: $white;
+  width: 25px;
+  height: 25px;
+  flex: none;
+}
+
+.title {
+  margin-bottom: 6px;
+}
+
+.text {
+  margin-bottom: 6px;
+}
+
+.progressBar {
+  position: relative;
+  width: 100%;
+  border-radius: 3px;
+  background-color: $bg-progress;
+  height: 6px;
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 3px;
+  background-color: $progress-bar;
+  height: 6px;
+}
+
+.start {
+  animation: timeOut 3s linear 1 forwards
+}
+
+@keyframes timeOut{
+
+to{
+    width: 0;
+} 
+
+}
+
+@keyframes show{
+
+0%{
+    transform: translateX(100%);
+}
+
+40%{
+    transform: translateX(-15%);
+}
+
+80%{
+    transform: translateX(-5%);
+}
+
+100%{
+    transform: translateX(-10%);
+}
+
+}
+
+
+
+@keyframes hide{
+
+  0%{
+      transform: translateX(-10%);
+  }
+  
+  40%{
+      transform: translateX(-5%);
+  }
+  
+  80%{
+      transform: translateX(-15%);
+  }
+  
+  100%{
+      transform: translateX(100%);
+  }
+  
+  }
