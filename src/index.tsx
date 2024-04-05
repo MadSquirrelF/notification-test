@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable react/jsx-indent */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
